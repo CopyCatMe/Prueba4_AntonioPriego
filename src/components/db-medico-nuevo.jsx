@@ -3,26 +3,26 @@ import { revalidatePath } from "next/cache"
 import SubmitButton from "@/components/submit-button"
 
 
-async function nuevoProfesor(formData) {
+async function nuevoMedico(formData) {
     'use server'
     const nombre = formData.get('nombre')
     const especialidad = formData.get('especialidad')
-    const estado_civil = formData.get('estado_civil')
+    const perfil = formData.get('perfil')
 
-    const sql = 'insert into `profesores` (`nombre`, `especialidad`, `estado_civil`) values (?, ?, ?)'
-    const values = [nombre, especialidad, estado_civil];
+    const sql = 'insert into `medicos` (`nombre`, `especialidad`, `perfil`) values (?, ?, ?)'
+    const values = [nombre, especialidad, perfil];
 
     const [result, fields] = await mysql.query(sql, values)
 
     // Introducimos un retardo artificial
     await new Promise(resolve => setTimeout(resolve, 2000))
 
-    revalidatePath('/profesores-db')
+    revalidatePath('/medicos-db')
 }
 
 
 
-export default function ProfesorNuevo() {
+export default function MedicoNuevo() {
     return (
         <form className='my-10 grid grid-cols-[150px_auto] gap-4 p-4 bg-gray-800 rounded-lg shadow-md'>
 
@@ -32,12 +32,14 @@ export default function ProfesorNuevo() {
             <label htmlFor='especialidad' className='text-lg font-semibold text-white'>Especialidad: </label>
             <input required id='especialidad' name='especialidad' className='text-xl p-1 pl-2 text-white bg-gray-700 border border-gray-600 focus:border-blue-400 focus:outline-none' />
 
-            <label htmlFor='estado_civil' className='text-lg font-semibold text-white'>Estado Civil: </label>
-            <input required id='estado_civil' name='estado_civil' type='text' className='text-xl p-1 pl-2 text-white bg-gray-700 border border-gray-600 focus:border-blue-400 focus:outline-none' />
+            <select required id='perfil' name='perfil' className='text-xl p-1 pl-2 text-white bg-gray-700 border border-gray-600 focus:border-blue-400 focus:outline-none'>
+                <option value='ESPECIALISTA'>Especialista</option>
+                <option value='RESIDENTE'>Residente</option>
+            </select>
 
             <div className='col-span-2 grid gap-2'>
-                <SubmitButton formAction={nuevoProfesor} className='disabled:bg-slate-600 bg-green-600 text-white px-4 py-2 rounded-xl'>
-                    Guardar profesor
+                <SubmitButton formAction={nuevoMedico} className='disabled:bg-slate-600 bg-green-600 text-white px-4 py-2 rounded-xl'>
+                    Guardar medico
                 </SubmitButton>
                 <button type='reset' className='bg-orange-600 text-white px-4 py-2 rounded-xl'>
                     Limpiar campos

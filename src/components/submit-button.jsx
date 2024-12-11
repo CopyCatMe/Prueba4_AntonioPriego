@@ -7,7 +7,7 @@ export default function SubmitButton({ formAction, className, children }) {
     return (
         <button formAction={formAction} className={className} disabled={pending}>
             {pending
-                ? 'Realizando operación...'
+                ? 'Añadiendo...'
                 : children
             }
         </button>

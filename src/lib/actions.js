@@ -13,7 +13,7 @@ export async function login(formData) {
   const callbackUrl = formData.get('callbackUrl') || LOGIN_URL
 
   // Comprobar si credenciales son válidas
-  const authenticated = (username === 'usuario1' && password === 'usuario1' || username === 'usuario2' && password === 'usuario2')  // suponemos que son válidas
+  const authenticated = (username === 'usuario' && password === 'usuario' || username === 'usuario1' && password === 'usuario1')
 
   if (!authenticated) return
 
@@ -28,8 +28,6 @@ export async function login(formData) {
 export async function logout() {
   // Eliminamos cookie de sesión
   deleteCookie('session')
-
-  // redirect("/");   // No recarga si ya estamos en esta página
 
   // Hack to reload page! https://github.com/vercel/next.js/discussions/49345#discussioncomment-6120148
   redirect('/?' + Math.random())

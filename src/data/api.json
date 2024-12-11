@@ -17,6 +17,24 @@
       "nombre": "Juan",
       "especialidad": "Atencion primaria",
       "perfil": "RESIDENTE"
+    },
+    {
+      "id": "a78e",
+      "nombre": "Antonio",
+      "especialidad": "Traumatólogo",
+      "perfil": "RESIDENTE"
+    },
+    {
+      "id": "0c71",
+      "nombre": "Pani",
+      "especialidad": "Urólogo",
+      "perfil": "ESPECIALISTA"
+    },
+    {
+      "id": "0ff8",
+      "nombre": "Miguel",
+      "especialidad": "Psicologo",
+      "perfil": "RESIDENTE"
     }
   ],
   "pacientes": [
