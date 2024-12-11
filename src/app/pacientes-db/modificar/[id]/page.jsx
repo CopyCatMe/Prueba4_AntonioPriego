@@ -4,8 +4,8 @@ import { notFound, redirect } from 'next/navigation'
 import mysql from '@/lib/mysql'
 
 
-async function obtenerProfesor(id) {
-    const sql = 'select * from profesores where id = ?';
+async function obtenerPaciente(id) {
+    const sql = 'select * from pacientes where id = ?';
     const values = [id]
     const [rows] = await mysql.query(sql, values);
 
@@ -15,14 +15,14 @@ async function obtenerProfesor(id) {
     return rows[0]
 }
 
-async function modificarProfesor(formData) {
+async function modificarPaciente(formData) {
     'use server'
     const nombre = formData.get('nombre')
-    const especialidad = formData.get('especialidad')
-    const estado_civil = formData.get('estado-civil')
+    const localidad = formData.get('localidad')
+    const fecha_nacimiento = formData.get('fecha_nacimiento')
     const id = formData.get('id')
 
-    const sql = 'UPDATE `profesores` SET nombre = ?, especialidad = ?, estado_civil = ? WHERE id = ?'
+    const sql = 'UPDATE `pacientes` SET nombre = ?, localidad = ?, fecha_nacimiento = ? WHERE id = ?'
     const values = [nombre, especialidad, estado_civil, id];
 
     const [result, fields] = await mysql.query(sql, values)
@@ -31,32 +31,32 @@ async function modificarProfesor(formData) {
     // Introducimos un retardo artificial
     await new Promise(resolve => setTimeout(resolve, 2000))
 
-    redirect('/profesores-db');
+    redirect('/pacientes-db');
 }
 
 
-export default async function ProfesoresModificar({ params }) {
+export default async function PacientesModificar({ params }) {
 
     const { id } = await params
-    const profesor = await obtenerProfesor(id)
+    const paciente = await obtenerPaciente(id)
 
     return (
         <>
             <Navbar></Navbar>
             <section className="max-w-xl mx-auto p-4 bg-gray-800 text-white mt-20">
-                <Link href="/profesores-db" className="fixed top-3 left-3 p-2 bg-orange-400 text-black rounded-full"> &larr; Volver </Link>
+                <Link href="/pacientes-db" className="fixed top-3 left-3 p-2 bg-orange-400 text-black rounded-full"> &larr; Volver </Link>
                 <h1 className="py-4 text-4xl font-bold text-center border-b-4 border-orange-500">
-                    Modificar Profesor #{profesor.id}
+                    Modificar paciente #{paciente.id}
                 </h1>
                 <div className="flex flex-col items-center mt-8 p-4 bg-gray-700 rounded-lg shadow-md">
-                    <form action={modificarProfesor} className="w-full max-w-md flex flex-col gap-4">
-                        <input type="hidden" name="id" value={profesor.id} />
+                    <form action={modificarPaciente} className="w-full max-w-md flex flex-col gap-4">
+                        <input type="hidden" name="id" value={paciente.id} />
                         <label htmlFor="nombre" className="text-2xl font-semibold">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={profesor.nombre} />
-                        <label htmlFor="especialidad" className="text-2xl font-semibold">Especialidad:</label>
-                        <input type="text" name="especialidad" id="especialidad" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={profesor.especialidad} />
-                        <label htmlFor="estado_civil" className="text-2xl font-semibold">Estado Civil:</label>
-                        <input type="text" name="estado_civil" id="estado_civil" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={profesor.estado_civil} />
+                        <input type="text" name="nombre" id="nombre" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={paciente.nombre} />
+                        <label htmlFor="localidad" className="text-2xl font-semibold">Localidad:</label>
+                        <input type="text" name="localidad" id="localidad" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={paciente.localidad} />
+                        <label htmlFor="fecha_nacimiento" className="text-2xl font-semibold">Fecha de Nacimiento:</label>
+                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={paciente.fecha_nacimiento} />
                         <button type="submit" className="mt-4 p-2 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-600 transition-colors">Guardar cambios</button>
                     </form>
                 </div>
