@@ -29,7 +29,7 @@ export default function pacienteNew() {
             <label htmlFor='localidad' className='text-lg font-semibold text-white'>Localidad: </label>
             <input required id='localidad' name='localidad' className='text-xl p-1 pl-2 text-white bg-gray-700 border border-gray-600 focus:border-blue-400 focus:outline-none' />
 
-            <label htmlFor='fecha_nacimiento' className='text-lg font-semibold text-white'>Fecha Nacimiento: </label>
+            <label htmlFor='fecha_nacimiento' className='text-lg font-semibold text-white'>Fecha de Nacimiento: </label>
             <input required id='fecha_nacimiento' name='fecha_nacimiento' type='date' className='text-xl p-1 pl-2 text-white bg-gray-700 border border-gray-600 focus:border-blue-400 focus:outline-none' />
 
             <div className='col-span-2 grid gap-2'>

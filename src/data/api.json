@@ -17,6 +17,12 @@
       "especialidad": "Psicologo",
       "perfil": "ESPECIALISTA",
       "id": "0ff8"
+    },
+    {
+      "id": "cc4a",
+      "nombre": "Lola",
+      "especialidad": "Enfermera",
+      "perfil": "ESPECIALISTA"
     }
   ],
   "pacientes": [

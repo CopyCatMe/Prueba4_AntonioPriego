@@ -30,7 +30,7 @@ export default async function PacientePage({ params }) {
             <div className="flex flex-col items-center mt-8 p-6 bg-gray-700 rounded-lg shadow-md">
                 <p className="text-4xl text-white font-semibold">{paciente.nombre}</p>
                 <p className="text-2xl text-white mt-2">{paciente.localidad}</p>
-                <p className="text-2xl text-white mt-2">{paciente.fecha_nacimiento}</p>
+                <p className="text-2xl text-white mt-2">{new Date(paciente.fecha_nacimiento).toISOString().split('T')[0]}</p>
             </div>
         </section>
     );

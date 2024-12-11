@@ -1,17 +1,14 @@
 import { cookies } from "next/headers";
 
-const EXPIRE_TIME = 5 * 60 * 1000 // ms
-
+const EXPIRE_TIME = 10 * 60 * 1000
 
 export async function getCookie(name) {
-  const cookieStore = await cookies()      // IMPORTANTE: await cookies(), a partir de NextJS 15
+  const cookieStore = await cookies()
   const session = cookieStore.get(name)?.value;
 
   if (!session) return null;
   return await JSON.parse(session);
 }
-
-
 
 export async function setCookie(name, value) {
   const expires = new Date(Date.now() + EXPIRE_TIME)
@@ -25,8 +22,6 @@ export async function setCookie(name, value) {
   })
 }
 
-
-// Devolvemos cookie con nuevo tiempo de expiración
 export function updateCookie(name, value) {
   const expires = new Date(Date.now() + EXPIRE_TIME)
 

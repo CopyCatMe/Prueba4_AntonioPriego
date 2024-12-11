@@ -2,11 +2,9 @@
 import { redirect } from "next/navigation";
 import { deleteCookie, setCookie } from "@/lib/cookies";
 
-
-
 export async function login(formData) {
   const LOGIN_URL = '/'
-
+  
   const username = formData.get('username')
   const password = formData.get('password')
   const callbackUrl = formData.get('callbackUrl') || LOGIN_URL
@@ -22,6 +20,5 @@ export async function login(formData) {
 
 export async function logout() {
   deleteCookie('session')
-
-  redirect('/?' + Math.random())
+  redirect('/?logout=' + Math.random())
 }
