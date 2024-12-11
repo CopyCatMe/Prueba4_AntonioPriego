@@ -11,7 +11,7 @@ async function obtenerMedicos(query) {
     // Introducimos un retardo artificial
     // await new Promise(resolve => setTimeout(resolve, 5000))
 
-    return medico
+    return medicos
 }
 
 async function eliminarMedico(formData) {

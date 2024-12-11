@@ -29,7 +29,7 @@ export default async function ProfesorPage({ params }) {
             </h1>
             <div className="flex flex-col items-center mt-8 p-6 bg-gray-700 rounded-lg shadow-md">
                 <p className="text-4xl text-white font-semibold">{profesor.nombre}</p>
-                <p className="text-xl text-white mt-2">{profesor.especialidad}</p>
+                <p className="text-2xl text-white mt-2">{profesor.especialidad}</p>
                 <p className="text-2xl text-white mt-2">{profesor.estado_civil}</p>
             </div>
         </section>

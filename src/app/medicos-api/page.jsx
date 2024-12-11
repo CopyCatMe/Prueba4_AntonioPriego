@@ -20,7 +20,7 @@ export default async function MedicosApi({ searchParams }) {
 
                 <MedicoNuevo />
 
-                <Suspense fallback={<Fallback>Obteniendo datos ... </Fallback>}>
+                <Suspense fallback={<Fallback>Obteniendo medicos... </Fallback>}>
                     <Medicos query={query || ''} />
                 </Suspense>
             </section>

@@ -26,7 +26,7 @@ export default async function MedicosPage({ params }) {
             </h1>
             <div className="flex flex-col items-center mt-8 p-6 bg-gray-700 rounded-lg shadow-md">
                 <p className="text-4xl text-white font-semibold">{medico.nombre}</p>
-                <p className="text-xl text-white mt-2">{medico.especialidad}</p>
+                <p className="text-2xl text-white mt-2">{medico.especialidad}</p>
                 <p className="text-2xl text-white mt-2">{medico.perfil}</p>
             </div>
         </section>

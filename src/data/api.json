@@ -1,24 +1,6 @@
 {
   "medicos": [
     {
-      "id": "1",
-      "nombre": "Pedro",
-      "especialidad": "Traumatologo",
-      "perfil": "ESPECIALISTA"
-    },
-    {
-      "id": "2",
-      "nombre": "Ana",
-      "especialidad": "Dermatologo",
-      "perfil": "RESIDENTE"
-    },
-    {
-      "id": "3",
-      "nombre": "Juan",
-      "especialidad": "Atencion primaria",
-      "perfil": "RESIDENTE"
-    },
-    {
       "id": "a78e",
       "nombre": "Antonio",
       "especialidad": "Traumatólogo",
@@ -31,30 +13,30 @@
       "perfil": "ESPECIALISTA"
     },
     {
-      "id": "0ff8",
       "nombre": "Miguel",
       "especialidad": "Psicologo",
-      "perfil": "RESIDENTE"
+      "perfil": "ESPECIALISTA",
+      "id": "0ff8"
     }
   ],
   "pacientes": [
     {
-      "id": "1",
-      "nombre": "Rafael",
-      "localidad": "Cordoba",
-      "fecha_nacimiento": "2000-01-01"
+      "nombre": "Angel",
+      "localidad": "Castro del Rio",
+      "fecha_nacimiento": "2000-01-01",
+      "id": "1"
     },
     {
-      "id": "2",
-      "nombre": "David",
-      "localidad": "Montilla",
-      "fecha_nacimiento": "1995-02-02"
+      "nombre": "Jose",
+      "localidad": "Castro del Rio",
+      "fecha_nacimiento": "1995-02-02",
+      "id": "2"
     },
     {
-      "id": "3",
-      "nombre": "Carlos",
-      "localidad": "Carteya",
-      "fecha_nacimiento": "1990-03-03"
+      "nombre": "Pani",
+      "localidad": "Aguilar",
+      "fecha_nacimiento": "1990-03-03",
+      "id": "3"
     }
   ]
 }

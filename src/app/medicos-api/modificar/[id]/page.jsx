@@ -61,9 +61,9 @@ export default async function MedicosModificar({ params }) {
                         <label htmlFor="especialidad" className="text-2xl font-semibold">Especialidad:</label>
                         <input type="text" name="especialidad" id="especialidad" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={medico.especialidad} />
                         <label htmlFor="perfil" className="text-2xl font-semibold">Perfil:</label>
-                        <select name="perfil" id="perfil" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none">
-                            <option value="ESPECIALISTA" selected={medico.perfil === 'ESPECIALISTA'}>Especialista</option>
-                            <option value="RESIDENTE" selected={medico.perfil === 'RESIDENTE'}>Residente</option>
+                        <select name="perfil" id="perfil" className="text-xl p-1 text-center bg-gray-800 border-b-2 border-gray-600 focus:border-orange-400 focus:outline-none" defaultValue={medico.perfil}>
+                            <option value="ESPECIALISTA">Especialista</option>
+                            <option value="RESIDENTE">Residente</option>
                         </select>
                         <button type="submit" className="mt-4 p-2 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-600 transition-colors">Guardar cambios</button>
                     </form>

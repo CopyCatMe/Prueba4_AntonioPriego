@@ -32,6 +32,7 @@ export default function MedicoNuevo() {
             <label htmlFor='especialidad' className='text-lg font-semibold text-white'>Especialidad: </label>
             <input required id='especialidad' name='especialidad' className='text-xl p-1 pl-2 text-white bg-gray-700 border border-gray-600 focus:border-blue-400 focus:outline-none' />
 
+            <label htmlFor='perfil' className='text-lg font-semibold text-white'>Perfil: </label>
             <select required id='perfil' name='perfil' className='text-xl p-1 pl-2 text-white bg-gray-700 border border-gray-600 focus:border-blue-400 focus:outline-none'>
                 <option value='ESPECIALISTA'>Especialista</option>
                 <option value='RESIDENTE'>Residente</option>
