@@ -9,17 +9,17 @@ export default function Navbar() {
                 <Link href="/homepage" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
                     Inicio
                 </Link>
-                <Link href="/alumnos-db" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
-                    Alumnos BBDD
+                <Link href="/medicos-db" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
+                    Medicos BBDD
                 </Link>
-                <Link href="/alumnos-api" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
-                    Alumnos API REST
+                <Link href="/medicos-api" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
+                    Medicos API REST
                 </Link>
-                <Link href="/profesores-db" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
-                    Profesores BBDD
+                <Link href="/pacientes-db" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
+                    Pacientes BBDD
                 </Link>
-                <Link href="/profesores-api" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
-                    Profesores API REST
+                <Link href="/pacientes-api" className="text-white text-sm font-medium px-3 py-1 rounded hover:bg-orange-500 hover:text-black transition">
+                    Pacientes API REST
                 </Link>
                 <Logout action={logout} />
             </div>
