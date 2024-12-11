@@ -1,6 +1,6 @@
 import Fallback from "@/components/fallback";
-import Profesores from "@/components/api-profesores";
-import ProfesorNuevo from "@/components/api-profesor-nuevo";
+import Profesores from "@/components/api-pacientes";
+import ProfesorNuevo from "@/components/api-medico-nuevo";
 import { Suspense } from "react";
 import Navbar from "@/components/navbar";
 

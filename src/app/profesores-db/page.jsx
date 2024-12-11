@@ -1,6 +1,6 @@
 import mysql from '@/lib/mysql'
-import Profesores from "@/components/db-profesores";
-import ProfesorNuevo from "@/components/db-profesor-nuevo";
+import Profesores from "@/components/db-medicos";
+import ProfesorNuevo from "@/components/db-paciente-nuevo";
 import { Suspense } from "react";
 import Fallback from "@/components/fallback";
 import Navbar from "@/components/navbar";
